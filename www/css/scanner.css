@@ -1,0 +1,28 @@
+html{
+  background:#E4E4E4;
+}
+
+.button {
+  text-decoration: none;
+  padding: 0 32px;
+  height: 56px;
+  line-height: 56px;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px 0 rgba(45,222,152,0.4);
+  border: none;
+  background-image: linear-gradient(284deg, #1cc7d0, #2dde98);
+  touch-action: manipulation;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+  transition: box-shadow .2s ease, background 0.2s ease, transform 0.1s ease !important;
+  will-change: background, transform, box-shadow;
+  backface-visibility: hidden;
+  margin-bottom: 0;
+}
