@@ -22,14 +22,19 @@
       <script type="text/javascript" src="js/scanner.js"></script>
       <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
       <script type="text/javascript">
+      var value;
       function scan(){
         cordova.plugins.barcodeScanner.scan(
           function (result) {
               if(!result.cancelled){
-                  if(result.format == "QR_CODE"){
-                    var value = result.text;
-                    $("#result").text(value);
+                  var res = result.text;
+                  if (isURL(res)){
+                    value = res + " " + "<a href='javascript:openURL("+'"'+res+'"'+");'>visit ?</a>";
+                  } else {
+                    url = 'http://google.com/search?q='+res;
+                    value = res + " " + "<a href='javascript:openURL("+'"'+url+'"'+");'>visit ?</a>";
                   }
+                  $("#result").append(value);
               }
           },
           function (error) {
